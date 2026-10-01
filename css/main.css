@@ -1,10 +1,14 @@
+/* Main page styles */
 body {
   font-family: 'Roboto', Helvetica, sans-serif;
-  background-color: grey;
+  background-color: #e8e8e8;
+  color: #1a1a1a;
   margin: 0;
   padding: 0;
+  line-height: 1.6;
 }
 
+/* Different font for headings */
 h1,
 h2,
 h3,
@@ -12,60 +16,208 @@ h4,
 h5,
 h6 {
   font-family: 'Stick No Bills', 'Roboto', Helvetica, sans-serif;
+  line-height: 1.2;
 }
 
+/* Makes keyboard focus easier to see */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #005fcc;
+  outline-offset: 3px;
+}
+
+/* Hides the skip link until it is selected with the keyboard */
+.skip-link {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* Shows the skip link when it gets focus */
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  background-color: #ffffff;
+  color: #000000;
+  padding: 0.75rem 1rem;
+  border: 3px solid #000000;
+  z-index: 1000;
+}
+
+/* Keeps the page content centered */
 .container {
   max-width: 1080px;
   margin: 0 auto;
   padding: 0 1rem;
+  background-color: #ffffff;
 }
 
+/* Adds space at the top of the header */
+.site-header {
+  padding-top: 1rem;
+}
+
+.site-header h1 {
+  margin-top: 0;
+  font-size: 3rem;
+}
+
+/* Keeps images inside their container */
 img {
+  display: block;
   width: 100%;
+  height: auto;
+}
+
+/* Controls the size of the banner */
+.banner {
+  max-height: 500px;
+  object-fit: cover;
+}
+
+/* Navigation styles */
+.main-nav {
+  margin-bottom: 1rem;
 }
 
 .main-nav ul {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
+  gap: 0.25rem;
   margin: 0;
   padding: 0;
 }
 
 .main-nav ul li {
-  flex: 1;
+  flex: 1 1 150px;
   text-align: center;
 }
 
+/* Makes navigation links easier to see and click */
 .main-nav ul li a {
   display: block;
-  color: inherit;
+  background-color: #222222;
+  color: #ffffff;
   text-decoration: none;
   font-size: 1.25rem;
+  font-weight: 500;
+  padding: 0.75rem 1rem;
 }
 
+/* Shows when a navigation link is hovered or focused */
+.main-nav ul li a:hover,
+.main-nav ul li a:focus-visible {
+  background-color: #444444;
+  text-decoration: underline;
+}
+
+/* Adds spacing around the main content */
+.main-content {
+  padding: 2rem 0;
+}
+
+.main-content section {
+  margin-bottom: 3rem;
+}
+
+/* Makes the owner section stand out */
+.owner {
+  background-color: #f2f2f2;
+  padding: 1.5rem;
+  border-left: 5px solid #222222;
+}
+
+.owner a {
+  color: #004b87;
+}
+
+/* Removes the default italic address style */
+address {
+  font-style: normal;
+}
+
+/* Limits the width of the contact form */
+.contact-section {
+  max-width: 700px;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+/* Keeps labels above their inputs */
+form label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-weight: 500;
+}
+
+/* Styles the form fields */
 form input,
 form textarea {
+  box-sizing: border-box;
   display: block;
   width: 100%;
-  margin-bottom: 1rem;
-  padding: .5rem 1rem;
+  padding: 0.75rem;
+  border: 2px solid #555555;
+  border-radius: 4px;
+  background-color: #ffffff;
+  color: #1a1a1a;
+  font: inherit;
 }
 
+/* Lets the message box be resized up and down */
 form textarea {
   min-height: 150px;
-  max-height: 150px;
-  height: 150px;
-  resize: none;
+  resize: vertical;
 }
 
+/* Styles the send button */
 form button {
-  background: none;
-  border: 2px solid black;
-  padding: 1rem;
+  background-color: #222222;
+  color: #ffffff;
+  border: 2px solid #222222;
+  border-radius: 4px;
+  padding: 0.75rem 1.5rem;
+  font: inherit;
+  font-weight: 500;
   text-transform: uppercase;
+  cursor: pointer;
 }
 
+/* Changes the button when hovered or focused */
+form button:hover,
+form button:focus-visible {
+  background-color: #444444;
+}
+
+/* Footer styles */
 .site-footer {
+  border-top: 2px solid #dddddd;
   padding: 2rem 0;
+  text-align: center;
+}
+
+/* Changes the layout for smaller screens */
+@media (max-width: 600px) {
+  .main-nav ul {
+    flex-direction: column;
+  }
+
+  .site-header h1 {
+    font-size: 2.5rem;
+  }
+
+  .container {
+    padding: 0 0.75rem;
+  }
 }
