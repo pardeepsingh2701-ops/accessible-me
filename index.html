@@ -17,12 +17,14 @@
 
 <body>
 
-  <div class="container">
+ <div class="container"
+     itemscope
+     itemtype="https://schema.org/Organization">
 
     <!-- Header of the website -->
     <header class="site-header">
 
-      <h1>Jam Box Studios</h1>
+     <h1 itemprop="name">Jam Box Studios</h1>
 
       <!-- Main navigation -->
       <nav class="main-nav">
@@ -66,12 +68,18 @@
 
         <h3>Address</h3>
 
-        <address>
-          Jam Box Studios<br>
-          123 Guitar Road<br>
-          Musicville, Danceistan<br>
-          B3T 0L0
-        </address>
+       <address
+  itemprop="address"
+  itemscope
+  itemtype="https://schema.org/PostalAddress">
+
+  <span itemprop="name">Jam Box Studios</span><br>
+  <span itemprop="streetAddress">123 Guitar Road</span><br>
+  <span itemprop="addressLocality">Musicville</span>,
+  <span itemprop="addressRegion">Danceistan</span><br>
+  <span itemprop="postalCode">B3T 0L0</span>
+
+</address>
 
       </section>
 
